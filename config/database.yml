@@ -11,7 +11,15 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  development:
+   adapter: postgresql # replace with remote db type if different
+   encoding: utf8 # modify if it is different
+   reconnect: false
+   database: portfolio_ww68 # remote database name
+   pool: 5
+   username: matias # username for remote database
+   password: GrikvDgnkMArlzvfsG8SKFD9W1mo9GjK  # password for remote database
+   host: postgres://matias:GrikvDgnkMArlzvfsG8SKFD9W1mo9GjK@dpg-cj8kfc4l975s73f6u8k0-a.ohio-postgres.render.com/portfolio_ww68 # this will be host where database is installed
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
